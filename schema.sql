@@ -2,9 +2,8 @@
 
   CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    country VARCHAR(255),
+    country_name VARCHAR(255),
     capital VARCHAR(255),
-    flag VARCHAR(255),
+    flag VARCHAR(255)
   );
 
