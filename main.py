@@ -18,8 +18,8 @@ class Country(BaseModel):
 
 
 db.connect()
-db.drop_tables([Country])
-db.create_tables([Country])
+# db.drop_tables([Country])
+# db.create_tables([Country])
 
 app = Flask(__name__)
 
@@ -38,6 +38,7 @@ def endpoint(id=None):
         else:
             countries_list = []
             for country in Country.select():
+                print(country.country_name)
                 countries_list.append(model_to_dict(country))
             return jsonify(countries_list)
 
@@ -56,4 +57,4 @@ def endpoint(id=None):
         return f'Country {id} has been deleted'
 
 
-app.run(debug=True)
+app.run(port=5000, debug=True)
